@@ -1,51 +1,71 @@
 # Create a simple REST API using ASP.NET
 
-### The Brief:
+# Summary
 
-##### Time 0.5 - 2 hours
+When you build the project the nuget package restore the packages from the solution (EntityFramework, Moq, Ninject...).
+When you run the first time the localSQL is created. I have selected the option to recreate the dabase each time you run the project.
 
-Create a working RESTful API using ASP.NET, the API you will create will allow the consumer of the API to save, update and get transactions. Auth is considered out of scope for this test.
+The database contains two rows to test the endpoints.
 
-A transaction is represented as follows:
-```cs
-        public long TransactionId { get; set; }
-        public DateTime TransactionDate { get; set; }
-        public string Description { get; set; }
-        public decimal TransactionAmount { get; set; }
-        public DateTime CreatedDate { get; set; }        
-        public DateTime ModifiedDate { get; set; }
-        public string CurrencyCode { get; set; }
-        public string Merchant { get; set; }
-```
->  **Merchant and Description are optional**
+- TransactionId: 1
+- TransactionId: 2
 
-What you can use is pretty open (use whatever frameworks you are comfortable with) but it has to use ASP.NET and meet the following criteria (order of importance).
+##The solution contain two projects:
+- MoneyBox.Api
+- MoneyBox.Api.Tests
 
-1. **Your solution must compile and run first time** using Visual Studio 2013/2015, we shouldn't have to add any additional config etc (feel to add any instructions in the readme).
+###The project MoneyBox.Api contain:
 
-2. The solution should be as simple as possible. More weight is given to the solution with the **least complexity**. 
+- IndexController: simple controller to redirect to a 200 Http Code.
+- TransactionController: contains all endpoints. The controller manipulates the data through the TransactionRepository.
+- TransactionRepository: (implement ITransactionRepository) class to manipulate the data.
+- MoneyBoxContext: class to support Entity Framework Code First approach.
 
-3. Transactions must be stored - you can use anything you like to achieve this, but consider the importance 1 & 2 in your solution. 
+I am using Ninject to inject my repository object (TransactionRepository) to my controller.
 
-4. The API must have an endpoint to create a new transaction.
+###The project MoneyBox.Api.Test:
 
-5. The API must have an endpoint to update a transaction.
+- Contain all my tests of the REST api.
+- I am using Moq to implement Moq from my Repository object to avoid using the database.
+- I have used MSTest.
 
-6.  The API must have an endpoint to delete a transaction.
 
-7. The API must have an endpoint to get a transaction.
 
-8. The API must have an endpoint to get a list of all transactions.
+To access the api : http://localhost:SERVERPORT/api/transaction 
 
-9. Your solution should contain tests, again how you do this is left up to you - unit, integration, acceptance etc. You can add more than one test project to demonstrate different test techniques for example integration / unit.
+## REST Api Endpoints:
 
-##### How to Submit your test to us:
- - Fork this repository
-	- Create your solution in your repository
-	- When you're happy, [create a pull request](https://help.github.com/articles/creating-a-pull-request/)
- - Provide a readme which details:
-     - a short description of your API what have used, debugging instructions (*don't forget point 1*) any comments you wish to add
-     - The time you spent on the project.
-     - If you ran out of time, but would have liked to implemented certain features, tell us why
+| Description         | Http Verb | EndPoint           			|Comments      |
+| :--------------------- | :------------:| :-----------------------------------|:-------------|
+| Get All Transactions| GET       | /api/transaction   			|	       |
+| Get Transaction     | GET       | /api/transaction/{transactionId}    |	       |
+| Create Transaction  | POST      | /api/transaction   			|Header Param to pass - Content-Type: application/json	       |
+| Update Transaction  | PUT       | /api/transaction   			|Header Param to pass - Content-Type: application/json	       |
+| Delete Transaction  | DELETE    | /api/transaction/{transactionId}   	|	       |
 
-GOOD LUCK :smile:
+
+A Postman script has been included in the root of this repository to executing the requests detailed below. (It's neccesary to modify the URL and PORT to point the calls correctly.
+
+## Tools Used
+
+- VS 2013 Community
+- .Net 4.5.2
+- WebApi
+- Entity Framework 6 (installed with NuGet)
+- Ninject (installed with NuGet)
+- Moq (installed with NuGet)
+
+##Time
+
+I spent around 1.5 hours on this. I did during my breaks
+
+##Improvements
+
+Things to include in future versions:
+
+- Implement Swagger.
+- Async actions
+- Logging
+- Validation
+- Error Handling
+
