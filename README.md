@@ -57,7 +57,7 @@ A Postman script has been included in the root of this repository to executing t
 
 ##Time
 
-I spent around 1.5 hours on this. I did during my breaks
+I spent around 1.5 hours on this.
 
 ##Improvements
 
