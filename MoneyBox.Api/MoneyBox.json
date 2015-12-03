@@ -1,0 +1,97 @@
+{
+  "id": "6ef9fb83-02d1-a100-2ec6-695f4db09e9d",
+  "name": "MoneyBox",
+  "timestamp": 1449092227898,
+  "requests": [
+    {
+      "collectionId": "6ef9fb83-02d1-a100-2ec6-695f4db09e9d",
+      "id": "0352e205-7d0f-14a0-bf28-18dc0b1f4829",
+      "name": "Get All",
+      "description": "",
+      "url": "http://localhost:60293/api/Transaction",
+      "method": "GET",
+      "headers": "",
+      "data": "{\n  \"TransactionId\": 999,\n  \"TransactionDate\": \"2015-12-02T21:14:16.0718297+00:00\",\n  \"Description\": \"Buy Euros 2\",\n  \"TransactionAmount\": 800,\n  \"CreatedDate\": \"2015-12-02T00:00:00+00:00\",\n  \"ModifiedDate\": \"2015-12-02T22:14:16.0718297+00:00\",\n  \"CurrencyCode\": \"GPB\",\n  \"Merchant\": \"PayPalos\"\n}\n",
+      "dataMode": "raw",
+      "timestamp": 0,
+      "version": 2,
+      "time": 1449157367562
+    },
+    {
+      "collectionId": "6ef9fb83-02d1-a100-2ec6-695f4db09e9d",
+      "id": "196e0d02-29db-e1ae-9847-16986f354cfd",
+      "name": "Get Transaction by Id",
+      "description": "",
+      "url": "http://localhost:60293/api/Transaction/2",
+      "method": "GET",
+      "headers": "",
+      "data": "{\n  \"TransactionId\": 2,\n  \"TransactionDate\": \"2015-12-02T21:14:16.0718297+00:00\",\n  \"Description\": \"Buy Euros 2\",\n  \"TransactionAmount\": 800,\n  \"CreatedDate\": \"2015-12-02T00:00:00+00:00\",\n  \"ModifiedDate\": \"2015-12-02T22:14:16.0718297+00:00\",\n  \"CurrencyCode\": \"GPB\",\n  \"Merchant\": \"PayPalos\"\n}\n",
+      "dataMode": "raw",
+      "timestamp": 0,
+      "version": 2,
+      "time": 1449152402635
+    },
+    {
+      "collectionId": "6ef9fb83-02d1-a100-2ec6-695f4db09e9d",
+      "id": "2f152df4-83cc-764c-c0ea-0117f6f51b92",
+      "name": "Update an Incorrect Transaction",
+      "description": "",
+      "url": "http://localhost:60293/api/Transaction/",
+      "method": "PUT",
+      "headers": "Content-Type: application/json\n",
+      "data": "{\n  \"TransactionId\": 999,\n  \"TransactionDate\": \"2015-12-02T21:14:16.0718297+00:00\",\n  \"Description\": \"Buy Euros 2\",\n  \"TransactionAmount\": 800,\n  \"CreatedDate\": \"2015-12-02T00:00:00+00:00\",\n  \"ModifiedDate\": \"2015-12-02T22:14:16.0718297+00:00\",\n  \"CurrencyCode\": \"GPB\",\n  \"Merchant\": \"PayPalos\"\n}\n",
+      "dataMode": "raw",
+      "timestamp": 0,
+      "responses": [
+        
+      ],
+      "version": 2
+    },
+    {
+      "collectionId": "6ef9fb83-02d1-a100-2ec6-695f4db09e9d",
+      "id": "5b714bed-86fe-8a07-5e25-b7df15b8d7a6",
+      "name": "Update Transaction",
+      "description": "",
+      "url": "http://localhost:60293/api/Transaction/",
+      "method": "PUT",
+      "headers": "Content-Type: application/json\n",
+      "data": "{\n  \"TransactionId\": 2,\n  \"TransactionDate\": \"2015-12-02T21:14:16.0718297+00:00\",\n  \"Description\": \"Buy Euros 2\",\n  \"TransactionAmount\": 800,\n  \"CreatedDate\": \"2015-12-02T00:00:00+00:00\",\n  \"ModifiedDate\": \"2015-12-02T22:14:16.0718297+00:00\",\n  \"CurrencyCode\": \"GPB\",\n  \"Merchant\": \"PayPalos\"\n}\n",
+      "dataMode": "raw",
+      "timestamp": 0,
+      "responses": [
+        
+      ],
+      "version": 2
+    },
+    {
+      "collectionId": "6ef9fb83-02d1-a100-2ec6-695f4db09e9d",
+      "id": "c9ab7db9-d2f9-df94-c3a2-991e34b69454",
+      "name": "Add a transaction",
+      "description": "",
+      "url": "http://localhost:60293/api/Transaction/",
+      "method": "POST",
+      "headers": "Content-Type: application/json\n",
+      "data": "{\n  \"TransactionDate\": \"2015-12-02T21:14:16.0718297+00:00\",\n  \"Description\": \"Buy Euros 2\",\n  \"TransactionAmount\": 200,\n  \"CreatedDate\": \"2015-12-02T00:00:00+00:00\",\n  \"ModifiedDate\": \"2015-12-02T22:14:16.0718297+00:00\",\n  \"CurrencyCode\": \"GPB\",\n  \"Merchant\": \"PayPalos\"\n}\n",
+      "dataMode": "raw",
+      "timestamp": 0,
+      "version": 2,
+      "time": 1449152775338
+    },
+    {
+      "collectionId": "6ef9fb83-02d1-a100-2ec6-695f4db09e9d",
+      "id": "f0c3d201-c4aa-36d2-3057-9e77ae6e32dc",
+      "name": "Delete Transaction By Id",
+      "description": "",
+      "url": "http://localhost:60293/api/Transaction/1",
+      "method": "DELETE",
+      "headers": "",
+      "data": [
+        
+      ],
+      "dataMode": "params",
+      "timestamp": 0,
+      "version": 2,
+      "time": 1449153086579
+    }
+  ]
+}
