@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MoneyBox.Api</name>
+    </assembly>
+    <members>
+        <member name="M:MoneyBox.Api.App_Start.NinjectWebCommon.Start">
+            <summary>
+            Starts the application
+            </summary>
+        </member>
+        <member name="M:MoneyBox.Api.App_Start.NinjectWebCommon.Stop">
+            <summary>
+            Stops the application.
+            </summary>
+        </member>
+        <member name="M:MoneyBox.Api.App_Start.NinjectWebCommon.CreateKernel">
+            <summary>
+            Creates the kernel that will manage your application.
+            </summary>
+            <returns>The created kernel.</returns>
+        </member>
+        <member name="M:MoneyBox.Api.App_Start.NinjectWebCommon.RegisterServices(Ninject.IKernel)">
+            <summary>
+            Load your modules or register your services here!
+            </summary>
+            <param name="kernel">The kernel.</param>
+        </member>
+        <member name="T:MoneyBox.Api.Controllers.TransactionController">
+            <summary>
+            Transactions Controller 
+            </summary>
+        </member>
+        <member name="M:MoneyBox.Api.Controllers.TransactionController.#ctor(MoneyBox.Api.Interfaces.ITransactionService)">
+            <summary>
+            Constructor with IoC
+            </summary>
+            <param name="methods">Inject transactionService </param>
+        </member>
+        <member name="M:MoneyBox.Api.Controllers.TransactionController.GetAll">
+            <summary>
+            Method to get all transactions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MoneyBox.Api.Controllers.TransactionController.GetById(System.Int64)">
+            <summary>
+            Method to get a specific transaction by Id
+            </summary>
+            <param name="transactionId">Transaction Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MoneyBox.Api.Controllers.TransactionController.Post(MoneyBox.Api.Models.Transaction)">
+            <summary>
+            Method to Post a new transaction
+            </summary>
+            <param name="transaction"> Transaction object</param>
+            <returns></returns>
+        </member>
+        <member name="M:MoneyBox.Api.Controllers.TransactionController.Put(MoneyBox.Api.Models.Transaction)">
+            <summary>
+            Method to Update a transaction
+            </summary>
+            <param name="transaction">Transaction to Update</param>
+            <returns></returns>
+        </member>
+        <member name="M:MoneyBox.Api.Controllers.TransactionController.Delete(System.Int64)">
+            <summary>
+            Method to delete a trasaction by Id
+            </summary>
+            <param name="transactionId">Transaction Id to delete</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
